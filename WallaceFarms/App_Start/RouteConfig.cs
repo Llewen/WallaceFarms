@@ -13,6 +13,7 @@ namespace WallaceFarms
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //DJN 2/4/14 - Changed controller to equal wallaceFarms in order to launch first page
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

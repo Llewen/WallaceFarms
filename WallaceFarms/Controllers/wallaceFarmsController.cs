@@ -8,7 +8,7 @@ namespace WallaceFarms.Controllers
 {
     public class wallaceFarmsController : Controller
     {
-
+        //DJN & SBH - Created controller to return Index view contained in Views/wallaceFarms
         public ActionResult Index()
         {
             return View();
