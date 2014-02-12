@@ -4,26 +4,37 @@
 	margin-left: auto;
 	width: 900px;
 }
+.banner {
+	text-align: center;
+}
+
 .leftBar {
 	float: left;
-	height: 300px;
+	height: 450px;
 	width: 150px;	
+	margin: 25px;
 }
+
 .content {
-	float: inherit;
-	width: 800px;
+	margin: 25px;
+	width: 600px;
+	margin-top: 3.5em;
 }
 .infoBar {
 	float: right;
-	height: 25px;
-	width: 150px;
+	height: 125px;
+	width: 250px;
+	margin: 20px;
+	clear: right;
+	margin-top: 1.4em;
 }
 .rightBar {
 	float: right;
-	width: 150px;
+	height: 275px;
+	width: 250px;
+	margin: 20px;
+	clear: right;
 }
 .footer {
-	clear: right;
-	clear: left; 
+	clear: both; 
 }
-
