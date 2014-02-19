@@ -3,8 +3,7 @@ body {
 	background: #f5e6c6
 }
 .wrapper {
-	margin-right: auto;
-	margin-left: auto;
+	margin: 0 auto;
 	width: 900px;
 	background: #fff;
 }
@@ -34,19 +33,7 @@ body {
 }
 .infoBar {
 	float: right;
-	##width: 250px;
-	margin: 20px;
-	padding: 20px;
-	clear: right;
-	margin-top: 1.4em;
-	background: #c80000;
-	color: white;
-	border-radius: 10px;
-	text-align: center;
-}
-.infoBar {
-	float: right;
-	##width: 250px;
+	max-width: 250px;
 	margin: 20px;
 	padding: 20px;
 	clear: right;
@@ -70,8 +57,9 @@ body {
 	margin: 20px;
 	clear: right;
 }
-#footer {
-    ##background-color:rgb(250, 198, 18);
+.footer {
+    ##background-color: #c80000;
+    clear: both;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 20px;
