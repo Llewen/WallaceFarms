@@ -6,12 +6,12 @@ using System.Web.Mvc;
 
 namespace WallaceFarms.Controllers
 {
-    public class wallaceFarmsController : Controller
+    public class InfoController : Controller
     {
-        //DJN & SBH - Created controller to return Index view contained in Views/wallaceFarms
+
         public ActionResult Index()
         {
-            return View();
+            return View("Info");
         }
 
     }
