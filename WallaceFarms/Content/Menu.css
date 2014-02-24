@@ -1,7 +1,18 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
 ﻿/*Menu Style Sheet for Wallace*/
 .menu{
         border:none;
         float:right;
+<<<<<<< HEAD
+=======
+=======
+﻿.menu{
+        border:none;
+>>>>>>> origin/simosBranch
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
         border:0px;
         margin:0px;
         padding:0px;
@@ -9,11 +20,24 @@
 "Lucida Grande", Verdana, Helvetica, sans-serif;
         font-size:14px;
         font-weight:bold;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
         max-width:150px;
         }
 .menu ul{
         background:#1b86ca;
         height:35px;
+<<<<<<< HEAD
+=======
+=======
+        }
+.menu ul{
+        background:#fff;
+        height:25px;
+>>>>>>> origin/simosBranch
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
         list-style:none;
         margin:0;
         padding:0;
@@ -24,6 +48,10 @@
                 width:100px;
                 }
         .menu li a{
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
                 background:#095383 url("menu.png") bottom left no-repeat;
                 color:#cccccc;
                 display:block;
@@ -31,17 +59,45 @@
                 line-height:35px;
                 margin:0px;
                 padding:0px 25px;
+<<<<<<< HEAD
+=======
+=======
+                background:#c80000 bottom left no-repeat;
+				border: solid;
+				border-width: 2px;
+                color:#fff;
+                display:block;
+                font-weight:normal;
+                line-height:25px;
+                margin:0px;
+>>>>>>> origin/simosBranch
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
                 text-align:center;
                 text-decoration:none;
                 width:100px;
                 }
                 .menu li a:hover, .menu ul li:hover a{
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
                         background: #333333 url("menu.png") bottom left no-repeat;
                         color:#FFFFFF;
                         text-decoration:none;
                         }
         .menu li ul{
                 background:#333333;
+<<<<<<< HEAD
+=======
+=======
+                        background: #0206f6 bottom left no-repeat;
+                        color:#fff;
+                        text-decoration:none;
+                        }
+        .menu li ul{
+                background:#c8c800;
+>>>>>>> origin/simosBranch
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
                 display:none;
                 height:auto;
                 padding:0px;
@@ -86,6 +142,14 @@
                         }
         .menu p{
                 clear:left;
+<<<<<<< HEAD
                 }        
+=======
+<<<<<<< HEAD
+                }        
+=======
+                }     
+>>>>>>> origin/simosBranch
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
 
                 

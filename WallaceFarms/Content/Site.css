@@ -15,6 +15,10 @@
 	margin: 25px;
 }
 .content {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
 	margin: 25px;
 	width: 600px;
 	margin-top: 3.5em;
@@ -26,6 +30,41 @@
 	margin: 20px;
 	clear: right;
 	margin-top: 1.4em;
+<<<<<<< HEAD
+=======
+=======
+	margin: 30px;
+	width: 600px;
+	margin-top: 2.75em;
+}
+.content img{
+	float:left;
+	border: none;
+	padding: 20px;
+}
+.content h3{
+	text-align: center;
+}
+.infoBar {
+	float: right;
+	max-width: 250px;
+	margin: 20px;
+	padding: 20px;
+	clear: right;
+	margin-top: 1.4em;
+	background: #c80000;
+	color: white;
+	border-radius: 10px;
+	text-align: center;
+}
+.address{
+	float: right;
+	margin-top: 20px;
+	margin-right: 12px;
+	clear: right;
+	text-align: center;
+>>>>>>> origin/simosBranch
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
 }
 .rightBar {
 	float: right;
@@ -35,5 +74,38 @@
 	clear: right;
 }
 .footer {
+<<<<<<< HEAD
 	clear: both; 
 }
+=======
+<<<<<<< HEAD
+	clear: both; 
+}
+=======
+    ##background-color: #c80000;
+    clear: both;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.copyright {
+    float: left;
+    font-size: 12px;
+    color: black;
+}
+
+.links {
+    float: right;
+    font-size: 12px;
+    color: black;
+}
+
+/*Float code from css-tricks.com*/
+
+a {
+    color: rgb(100, 100, 100);
+}
+>>>>>>> origin/simosBranch
+>>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
