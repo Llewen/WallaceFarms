@@ -1,0 +1,76 @@
+body {
+	
+	background: #f5e6c6 ;
+}
+
+.frame{
+	margin-top: 0;
+	padding: 10;
+	height: 638px;
+	background: url("frame_border2.png")  top center no-repeat;
+}
+
+.wrapper{
+	
+	margin-top: 50px;
+	width:900px;
+	height: 538px;
+	margin-right: auto;
+	margin-left: auto;
+	border-style:solid;
+	border-width: 3px;
+	background: url("farm3.jpg");
+}
+
+#home{
+	background: url("farm2.jpg");
+}
+.banner{
+	height: 100px;
+	}
+.content{
+	height: 403px;
+	##color: white;
+	##overflow: auto;
+}
+
+.tabs {
+  position: fixed;   
+  height: 403px; 
+  width:900px;
+  clear: both;
+  margin: 0;
+}
+.tab {
+  float: right;
+  margin-right: 1;
+}
+.tab label {
+  background: #eee; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  margin-left: -1px; 
+  position: relative;
+  left: 1px; 
+}
+.tab [type=radio] {
+  display: none;   
+}
+.tabcontent {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: white;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  border: 1px solid #ccc; 
+}
+[type=radio]:checked ~ label {
+  background: white;
+  border-bottom: 1px solid white;
+  z-index: 2;
+}
+[type=radio]:checked ~ label ~ .tabcontent {
+  z-index: 1;
+}

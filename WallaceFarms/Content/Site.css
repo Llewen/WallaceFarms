@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿/*Wallace Farms Style Sheet */
 .wrapper {
 	margin-right: auto;
@@ -36,27 +37,52 @@
 	margin: 30px;
 	width: 600px;
 	margin-top: 2.75em;
+=======
+﻿body {
+	
+	background: #f5e6c6 ;
 }
-.content img{
-	float:left;
-	border: none;
-	padding: 20px;
+
+.frame{
+	margin-top: 0;
+	padding: 10;
+	height: 638px;
+	background: url("border-images/frame_border2.png")  top center no-repeat;
 }
-.content h3{
-	text-align: center;
+
+.wrapper{
+	
+	margin-top: 50px;
+	width:900px;
+	height: 538px;
+	margin-right: auto;
+	margin-left: auto;
+	border-style:solid;
+	border-width: 3px;
+	background: url("border-images/farm3.jpg");
+>>>>>>> origin/simosBranch
 }
-.infoBar {
-	float: right;
-	max-width: 250px;
-	margin: 20px;
-	padding: 20px;
-	clear: right;
-	margin-top: 1.4em;
-	background: #c80000;
-	color: white;
-	border-radius: 10px;
-	text-align: center;
+
+#home{
+	background: url("border-images/farm2.jpg");
 }
+.banner{
+	height: 100px;
+	}
+.content{
+	height: 403px;
+	##color: white;
+	##overflow: auto;
+}
+
+.tabs {
+  position: fixed;   
+  height: 403px; 
+  width:900px;
+  clear: both;
+  margin: 0;
+}
+<<<<<<< HEAD
 .address{
 	float: right;
 	margin-top: 20px;
@@ -65,14 +91,22 @@
 	text-align: center;
 >>>>>>> origin/simosBranch
 >>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
+=======
+.tab {
+  float: right;
+  margin-right: 1;
+>>>>>>> origin/simosBranch
 }
-.rightBar {
-	float: right;
-	height: 275px;
-	width: 250px;
-	margin: 20px;
-	clear: right;
+
+.tab label {
+  background: #eee; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  margin-left: -1px; 
+  position: relative;
+  left: 1px; 
 }
+<<<<<<< HEAD
 .footer {
 <<<<<<< HEAD
 	clear: both; 
@@ -88,19 +122,27 @@
     padding-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
+=======
+.tab [type=radio] {
+  display: none;   
+>>>>>>> origin/simosBranch
 }
-
-.copyright {
-    float: left;
-    font-size: 12px;
-    color: black;
+.tabcontent {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: white;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  border: 1px solid #ccc; 
 }
-
-.links {
-    float: right;
-    font-size: 12px;
-    color: black;
+[type=radio]:checked ~ label {
+  background: white;
+  border-bottom: 1px solid white;
+  z-index: 2;
 }
+<<<<<<< HEAD
 
 /*Float code from css-tricks.com*/
 
@@ -109,3 +151,8 @@ a {
 }
 >>>>>>> origin/simosBranch
 >>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
+=======
+[type=radio]:checked ~ label ~ .tabcontent {
+  z-index: 1;
+}
+>>>>>>> origin/simosBranch
