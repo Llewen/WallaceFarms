@@ -132,6 +132,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Menu.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Menu %28old%29.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -187,7 +189,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Site %28old%29.css" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -215,9 +217,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\Index\Index %28old%29.cshtml" />
     <Content Include="Views\Info\Info.cshtml" />
     <Content Include="Views\Order\Order.cshtml" />
+    <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\Info\Info %28old%29.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

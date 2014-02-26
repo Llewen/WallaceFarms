@@ -1,85 +1,77 @@
-﻿/*Wallace Farms Style Sheet */
-body {
-	background: #f5e6c6
-}
-.wrapper {
-	margin: 0 auto;
-	width: 900px;
-	background: #fff;
-}
-.banner img{
-	border: none;
-	margin: 0;
-	padding: 0;
-}
-.leftBar {
-	float: left;
-	height: 450px;
-	width: 150px;	
-	margin: 25px;
-}
-.content {
-	margin: 30px;
-	width: 600px;
-	margin-top: 2.75em;
-}
-.content img{
-	float:left;
-	border: none;
-	padding: 20px;
-}
-.content h3{
-	text-align: center;
-}
-.infoBar {
-	float: right;
-	max-width: 250px;
-	margin: 20px;
-	padding: 20px;
-	clear: right;
-	margin-top: 1.4em;
-	background: #c80000;
-	color: white;
-	border-radius: 10px;
-	text-align: center;
-}
-.address{
-	float: right;
-	margin-top: 20px;
-	margin-right: 12px;
-	clear: right;
-	text-align: center;
-}
-.rightBar {
-	float: right;
-	height: 275px;
-	width: 250px;
-	margin: 20px;
-	clear: right;
-}
-.footer {
-    ##background-color: #c80000;
-    clear: both;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
+﻿body {
+	
+	background: #f5e6c6 ;
 }
 
-.copyright {
-    float: left;
-    font-size: 12px;
-    color: black;
+.frame{
+	margin-top: 0;
+	padding: 10;
+	height: 638px;
+	background: url("border-images/frame_border2.png")  top center no-repeat;
 }
 
-.links {
-    float: right;
-    font-size: 12px;
-    color: black;
+.wrapper{
+	
+	margin-top: 50px;
+	width:900px;
+	height: 538px;
+	margin-right: auto;
+	margin-left: auto;
+	border-style:solid;
+	border-width: 3px;
+	background: url("border-images/farm3.jpg");
 }
 
-/*Float code from css-tricks.com*/
+#home{
+	background: url("border-images/farm2.jpg");
+}
+.banner{
+	height: 100px;
+	}
+.content{
+	height: 403px;
+	##color: white;
+	##overflow: auto;
+}
 
-a {
-    color: rgb(100, 100, 100);
+.tabs {
+  position: fixed;   
+  height: 403px; 
+  width:900px;
+  clear: both;
+  margin: 0;
+}
+.tab {
+  float: right;
+  margin-right: 1;
+}
+
+.tab label {
+  background: #eee; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  margin-left: -1px; 
+  position: relative;
+  left: 1px; 
+}
+.tab [type=radio] {
+  display: none;   
+}
+.tabcontent {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: white;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  border: 1px solid #ccc; 
+}
+[type=radio]:checked ~ label {
+  background: white;
+  border-bottom: 1px solid white;
+  z-index: 2;
+}
+[type=radio]:checked ~ label ~ .tabcontent {
+  z-index: 1;
 }

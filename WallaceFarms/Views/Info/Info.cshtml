@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Information";
+    ViewBag.Title = "About Us";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,44 +11,57 @@
         <meta name="description" content="Welcome to Wallace Farm, Newcastle PA - Quality fresh Beef available for order.">
 	</head>
 	<body>
-		<div class="wrapper">
-		<div class="menu">
-			<p id="mainnav"><ul>
-				<li><a href="Index">Home</a></li>
-				<li><a href="Info">Information</a></li>
-				<li><a href="Order">Order</a></li>
-				</ul>
-			</p>
-		</div>
+
+<div class="frame">
+	
+<div class="wrapper">
+	<div class="banner"></div>
+	<div class="content">
+	
+	<div class="tabs">
+    
+   <div class="tab">
+       <input type="radio" id="tab-1" name="tab-group-1">
+       <label for="tab-1">About the Order Process</label>
+       
+       <div class="tabcontent">
+           stuff
+       </div> 
+   </div>
+    
+   <div class="tab">
+       <input type="radio" id="tab-2" name="tab-group-1">
+       <label for="tab-2">About the Cows</label>
+       
+       <div class="tabcontent">
+           stuff 2
+       </div> 
+   </div>
+    
+    <div class="tab">
+       <input type="radio" id="tab-3" name="tab-group-1" checked>
+       <label for="tab-3">About the Farm</label>
+     
+       <div class="tabcontent">
+           stuff 3
+       </div> 
+   </div>
+    
+</div>
 		
-		<div class="banner">
-			<h1>Information</h1>
-		</div>
+	</div>
+	<div class="menu"><ul>
+		<li><a href="Info">About Us</a></li>
 		
-		<div class="leftBar">
-			<p>The left bar is sooo great.  I wish the left bar would never end.</p>
-		</div>
-		
-		<div class="infoBar">
-			<p>Information!  Oh, yeah!  I can't get enough information!</p>
-		</div>
-		
-		
-		<div class="rightBar">
-			<p>...Meh.  This right text is BORING.  BOOOOORRRRINGGGGG!!!</p>
-		</div>
-		
-		<div class="content">
-			<p>
-                This is where you see FAQ, diagrams and what not.  But we didn't make any yet so you'll just
-                Have to use that fine brain of yours.  Go on, don't be afraid to think.
-			</p>
-		</div>
-		
-		<div class="footer">
-			<p>Wallace Farm<br />502 Smalls Ferry Road<br />New Castle, PA 16102<br />724-667-7801<br /></p>
-		</div>
-		
-		</div>
-	</body>
+		<li id="right_menu"><a href="#">Order Beef</a></li>
+	</ul>
+	<div id="footer">
+			<span class="copyright"> &copy; 2014 Wallace Farm</span>
+	</div>
+	</div>
+	
+</div>
+
+</div>
+</body>
 </html>
