@@ -1,19 +1,7 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
 ﻿/*Menu Style Sheet for Wallace*/
 .menu{
         border:none;
         float:right;
-<<<<<<< HEAD
-=======
-=======
-﻿.menu{
-<<<<<<< HEAD
-        border:none;
->>>>>>> origin/simosBranch
->>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
         border:0px;
         margin:0px;
         padding:0px;
@@ -21,38 +9,21 @@
 "Lucida Grande", Verdana, Helvetica, sans-serif;
         font-size:14px;
         font-weight:bold;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
         max-width:150px;
         }
 .menu ul{
         background:#1b86ca;
         height:35px;
-<<<<<<< HEAD
-=======
-=======
-        }
-.menu ul{
-        background:#fff;
-        height:25px;
->>>>>>> origin/simosBranch
->>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
         list-style:none;
         margin:0;
         padding:0;
         }
-        .menu li{
-                float:left;
-                padding:0px;
-                width:100px;
-                }
+.menu li{
+        float:left;
+        padding:0px;
+        width:100px;
+        }
         .menu li a{
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> cbf79605533e06ef7782da84e314e75cb49051f3
                 background:#095383 url("menu.png") bottom left no-repeat;
                 color:#cccccc;
                 display:block;
