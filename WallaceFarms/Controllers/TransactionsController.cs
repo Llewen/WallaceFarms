@@ -11,7 +11,7 @@ namespace WallaceFarms.Controllers
 {
     public class TransactionsController : Controller
     {
-        /*private TransactionDBContext db = new TransactionDBContext();
+        private TransactionDBContext db = new TransactionDBContext();
 
         //
         // GET: /Transactions/
@@ -39,7 +39,7 @@ namespace WallaceFarms.Controllers
 
         public ActionResult Create()
         {
-            return View(db.Transactions);
+            return View();
         }
 
         //
@@ -92,7 +92,7 @@ namespace WallaceFarms.Controllers
         // GET: /Transactions/Delete/5
 
         public ActionResult Delete(int id = 0)
-       { 
+        {
             Transaction transaction = db.Transactions.Find(id);
             if (transaction == null)
             {
@@ -118,6 +118,6 @@ namespace WallaceFarms.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
-        }*/
+        }
     }
 }
