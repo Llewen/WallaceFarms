@@ -5,6 +5,7 @@
 
 .frame{
 	margin-top: 0;
+    position: absolute;
 	padding: 10px;
     width: 1200px;
 	height: 638px;
@@ -16,6 +17,7 @@
 	margin-top: 50px;
 	width:900px;
 	height: 538px;
+    position: relative;
 	margin-right: auto;
 	margin-left: auto;
 	border-style:solid;
@@ -30,11 +32,17 @@
 	height: 100px;
 	}
 .content{
+    background-color: transparent;
 	height: 403px;
+    position: relative;  
+}
+
+.content #filled{
+    background-color: white;
 }
 
 .tabs {
-  position: fixed;   
+  position: relative;   
   height: 403px; 
   width:900px;
   clear: both;
