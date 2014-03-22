@@ -36,8 +36,12 @@
 	height: 403px;
     position: relative;  
 }
+.content p{
+    margin:0;
+    padding:0;
+}
 
-.content #filled{
+#filled{
     background-color: white;
 }
 
