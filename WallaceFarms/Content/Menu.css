@@ -34,7 +34,7 @@
 		}
 		#right_menu {float:right;}
 	.menu li a{
-		background:url("menu_back.png");
+		background: rgb(237, 28, 36);
 		color:#FFF;
 		display:block;
 		font-weight:normal;
