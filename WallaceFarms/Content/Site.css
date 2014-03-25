@@ -1,5 +1,4 @@
 ﻿body {
-	
 	background: #f5e6c6 ;
 }
 
@@ -11,11 +10,10 @@
 	padding: 10px;
     width: 1046px;
 	height: 674px;
-	background: url("border-images/frame_border2.png")  top center no-repeat;
+	background: url("border-images/frame_border2.png") top center no-repeat;
 }
 
 .wrapper{
-	
 	margin-top: 50px;
 	width:900px;
 	height: 538px;
