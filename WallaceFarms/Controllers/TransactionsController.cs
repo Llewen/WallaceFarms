@@ -49,6 +49,7 @@ namespace WallaceFarms.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Transaction transaction)
         {
+ 
             if (ModelState.IsValid)
             {
                 db.Transactions.Add(transaction);
