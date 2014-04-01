@@ -40,6 +40,21 @@
     margin:0px;
     padding:0px;
 }
+.textboxclass {
+    width: 190px;
+}
+.textboxclass2 {
+    width: 130px;
+}
+.textboxclass3 {
+    width: 30px;
+}
+.dropdown {
+    width: 210px;
+}
+.dropdown2 {
+    width: 110px;
+}
 
 article {
     padding-top: 15px;
