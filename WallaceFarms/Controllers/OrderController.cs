@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WallaceFarms;
 
 namespace WallaceFarms.Controllers
 {
-    public class OrderController : Controller
+    public abstract class OrderController : Controller
     {
+        protected OrderEntities entities = new OrderEntities();
 
-        public ActionResult Index()
+        protected override void Dispose(bool disposing)
         {
-            return View("Order");
+            entities.Dispose();
+            base.Dispose(disposing);
         }
 
     }

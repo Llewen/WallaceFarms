@@ -1,0 +1,49 @@
+﻿@model WallaceFarms.Order
+@{
+    ViewBag.Title = "Delete Order";
+}
+
+<h2>Delete</h2>
+<br />
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Order</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <br />
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Phone)
+        </div>
+        <br />
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+        <br />
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Status)
+        </div>
+        <br />
+
+        <input type="submit" value="Delete Order" />
+
+    </fieldset>
+}

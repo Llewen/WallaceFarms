@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -122,17 +124,52 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BeefOrder.cs">
+      <DependentUpon>order.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Butcher.cs">
+      <DependentUpon>order.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\InfoController.cs" />
+    <Compile Include="Controllers\OrderAccessController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\TransactionsController.cs" />
+    <Compile Include="Controllers\OrderPageController.cs" />
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>order.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Butcher.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderBeef.cs" />
     <Compile Include="Models\Transaction.cs" />
+    <Compile Include="order.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>order.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>order.tt</DependentUpon>
+    </Compile>
+    <Compile Include="order.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>order.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="order1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>order.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\OrderBeef.mdf" />
+    <Content Include="App_Data\OrderBeef_log.ldf">
+      <DependentUpon>OrderBeef.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\Menu.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -190,6 +227,23 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="order.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>order.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="order.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>order.edmx</DependentUpon>
+      <LastGenOutput>order.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="order.edmx.diagram">
+      <DependentUpon>order.edmx</DependentUpon>
+    </Content>
+    <Content Include="order.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>order.edmx</DependentUpon>
+      <LastGenOutput>order1.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -220,16 +274,15 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Info\Info.cshtml" />
-    <Content Include="Views\Order\Order.cshtml" />
+    <Content Include="Views\OrderPage\OrderPage.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
-    <Content Include="Views\Transactions\Index.cshtml" />
-    <Content Include="Views\Transactions\Details.cshtml" />
-    <Content Include="Views\Transactions\Create.cshtml" />
-    <Content Include="Views\Transactions\Edit.cshtml" />
-    <Content Include="Views\Transactions\Delete.cshtml" />
+    <Content Include="Views\OrderAccess\Index.cshtml" />
+    <Content Include="Views\OrderAccess\Edit.cshtml" />
+    <Content Include="Views\OrderAccess\Create.cshtml" />
+    <Content Include="Views\OrderAccess\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
