@@ -1,0 +1,26 @@
+﻿@model WallaceFarms.Models.AdminModel
+
+@{
+    ViewBag.Title = "Administration Panel";
+}
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Administration Panel</h2>
+
+        Hello, @User.Identity.Name!
+
+        @using (Html.BeginForm("LogOff", "Admin", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+        }
+        @Html.ActionLink("Change password", "Manage", "Admin")<br />
+        @Html.ActionLink("Create account", "Register", "Admin")<br />
+        @Html.ActionLink("Manage transactions", "Index", "OrderAccess")<br />
+    </body>
+</html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

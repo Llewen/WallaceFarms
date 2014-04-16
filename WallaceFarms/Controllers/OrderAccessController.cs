@@ -8,6 +8,7 @@ using System.Collections.Generic;
 
 namespace WallaceFarms.Controllers
 {
+    [Authorize]
     public class OrderAccessController : OrderController
     {
         
