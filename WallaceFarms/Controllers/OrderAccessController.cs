@@ -2,7 +2,9 @@
 using System.Web.Mvc;
 using System.Data.Entity.Validation;
 using WallaceFarms;
+using WallaceFarms.Models;
 using System;
+using System.Collections.Generic;
 
 namespace WallaceFarms.Controllers
 {
@@ -11,18 +13,43 @@ namespace WallaceFarms.Controllers
         
         public ActionResult Index()
         {
+            List<OrderModel> orderList = new List<OrderModel>();
             var orders =
                 from o in entities.Orders
                 orderby o.OrderID descending
                 select o;
 
-            return View(orders);
+            var beefOrders =
+                from b in entities.BeefOrders
+                orderby b.BeefOrderID descending
+                select b;
+
+            foreach (var order in orders)
+            {
+                bool hasBeefOrder = false;
+                foreach (var beefOrder in beefOrders) 
+                {
+                    if (beefOrder.OrderID == order.OrderID)
+                    {
+                        orderList.Add(new OrderModel(order, beefOrder));
+                        hasBeefOrder = true;
+                    }
+                }
+                if (!hasBeefOrder)
+                {
+                    orderList.Add(new OrderModel(order));
+                }
+            }
+
+            return View(orderList);
         }
 
         [HttpGet]
         public ActionResult Create()
         {
             int ID;
+            int BeefID;
+            
             try
             {
                 ID = (from o in entities.Orders select o.OrderID).Max();
@@ -31,15 +58,30 @@ namespace WallaceFarms.Controllers
             {
                 ID = 0;
             }
-            var order = new Order();
-            order.OrderID = ID + 1;
+
+            try
+            {
+                BeefID = (from o in entities.BeefOrders select o.BeefOrderID).Max();
+            }
+            catch
+            {
+                BeefID = 0;
+            }
+            OrderModel order = new OrderModel();
+            order.theOrder = new Order();
+            order.theBeefOrder = new BeefOrder();
+
+            order.theOrder.OrderID = ID + 1;
+            order.theBeefOrder.BeefOrderID = BeefID + 1;
+            order.theBeefOrder.OrderID=order.theOrder.OrderID;
             return View(order);
         }
 
         [HttpPost]
-        public ActionResult Create(Order Order)
+        public ActionResult Create(OrderModel Order)
         {
-            entities.Orders.Add(Order);
+            entities.Orders.Add(Order.theOrder);
+            entities.BeefOrders.Add(Order.theBeefOrder);
             entities.SaveChanges();
 
             return Redirect("/OrderAccess/Index");
@@ -48,27 +90,38 @@ namespace WallaceFarms.Controllers
         [HttpGet]
         public ActionResult Edit(int id = -1)
         {
-            var order = entities.Orders
+            OrderModel order = new OrderModel();
+                
+            order.theOrder = entities.Orders
                 .SingleOrDefault(o => o.OrderID == id);
 
-            if (order == null)
+
+            if (order.theOrder == null)
             {
                 return HttpNotFound();
             }
+
+            order.theBeefOrder = entities.BeefOrders
+                .SingleOrDefault(o => o.OrderID == id);
 
             return View(order);
         }
 
         [HttpPost]
-        public ActionResult Edit(int id, Order order)
+        public ActionResult Edit(int id, OrderModel order)
         {
             var dbOrder = entities.Orders
                 .SingleOrDefault(o => o.OrderID == id);
 
-            dbOrder.Name = order.Name;
-            dbOrder.Phone = order.Phone;
-            dbOrder.Email = order.Email;
-            dbOrder.Status = order.Status;
+            dbOrder.Name = order.theOrder.Name;
+            dbOrder.Phone = order.theOrder.Phone;
+            dbOrder.Email = order.theOrder.Email;
+            dbOrder.Status = order.theOrder.Status;
+
+            var dbBeefOrder = entities.BeefOrders
+                .SingleOrDefault(o => o.OrderID == id);
+
+            dbBeefOrder.NumQuarters = order.theBeefOrder.NumQuarters;
 
             entities.SaveChanges();
 
@@ -78,22 +131,29 @@ namespace WallaceFarms.Controllers
         [HttpGet]
         public ActionResult Delete(int id = -1)
         {
-            var order = entities.Orders
+            OrderModel order = new OrderModel();
+
+            order.theOrder = entities.Orders
                 .SingleOrDefault(o => o.OrderID == id);
 
-            if (order == null)
+            if (order.theOrder == null)
             {
                 return HttpNotFound();
             }
+
+            order.theBeefOrder = entities.BeefOrders
+                .SingleOrDefault(o => o.OrderID == id);
 
             return View(order);
         }
 
         [HttpPost]
-        public ActionResult Delete(int id, Order order)
+        public ActionResult Delete(int id, OrderModel order)
         {
-            var toDelete = entities.Orders.SingleOrDefault(o => o.OrderID == id);
-            entities.Orders.Remove(toDelete);
+            var toDeleteOrder = entities.Orders.SingleOrDefault(o => o.OrderID == id);
+            var toDeleteBeefOrder = entities.BeefOrders.SingleOrDefault(o => o.OrderID == id);
+            entities.Orders.Remove(toDeleteOrder);
+            entities.BeefOrders.Remove(toDeleteBeefOrder);
             entities.SaveChanges();
 
             return Redirect("/OrderAccess/Index");

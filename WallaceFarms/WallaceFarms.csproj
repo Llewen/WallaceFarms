@@ -144,6 +144,7 @@
     <Compile Include="Models\Butcher.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderBeef.cs" />
+    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="order.Context.cs">
       <AutoGen>True</AutoGen>

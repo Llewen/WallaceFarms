@@ -1,45 +1,68 @@
-﻿@model WallaceFarms.Order
+﻿@model WallaceFarms.Models.OrderModel
 @{
-    ViewBag.Title = "Edit Orders";
+    ViewBag.Title = "Edit Order";
 }
 
-<h2>Edit Orders</h2>
+<h2>Edit Order</h2>
 <br />
 
 @using (Html.BeginForm())
 {
     <fieldset>
-        <legend>Order</legend>
+        <legend>Edit Order</legend>
+
+        <h2>Order</h2>
+        <div class="editor-label">
+            @Html.DisplayFor(model => model.theOrder.OrderID)
+        </div>
+            @Html.HiddenFor(model => model.theOrder.OrderID)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
+            @Html.LabelFor(model => model.theOrder.Name)
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.Name)
+            @Html.TextBoxFor(model => model.theOrder.Name)
         </div>
         <br />
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Phone)
+            @Html.LabelFor(model => model.theOrder.Phone)
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.Phone)
+            @Html.TextBoxFor(model => model.theOrder.Phone)
         </div>
         <br />
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Email)
+            @Html.LabelFor(model => model.theOrder.Email)
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.Email)
+            @Html.TextBoxFor(model => model.theOrder.Email)
         </div>
         <br />
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Status)
+            @Html.LabelFor(model => model.theOrder.Status)
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.Status)
+            @Html.TextBoxFor(model => model.theOrder.Status)
+        </div>
+        <br />
+        <br />
+
+        <!-- BEEF ORDER FEILD  -->
+        <h2>Beef Order</h2>
+         <div class="editor-label">
+            @Html.DisplayFor(model => model.theBeefOrder.BeefOrderID)
+        </div>
+            @Html.HiddenFor(model => model.theBeefOrder.BeefOrderID)
+            @Html.HiddenFor(model => model.theBeefOrder.OrderID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.theBeefOrder.NumQuarters)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.theBeefOrder.NumQuarters)
         </div>
         <br />
 

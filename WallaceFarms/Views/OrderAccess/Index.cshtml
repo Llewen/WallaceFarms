@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WallaceFarms.Order>
+﻿@model IEnumerable<WallaceFarms.Models.OrderModel>
 @{
     ViewBag.Title = "Orders of Beef";
 }
@@ -8,18 +8,21 @@
 <h2><strong>Products:</strong> (<a href="/OrderAccess/Create" style="color: blue;">create new</a>)</h2>
 <br />
 
-
 <div style="min-height: 150px; font-size: 1.25em;">
-	@foreach ( var order in Model )
+	@foreach ( var entry in Model )
 	{
 		<div style="margin-bottom: .5em;">
-			<div class="listing-item name">@order.Name</div> 
-            <div class="listing-item">[@order.OrderID]</div> 
-			<div class="listing-item">[@order.Email]</div> 
-			<div class="listing-item">[@order.Phone]</div>
-            <div class="listing-item">[@order.Status]</div> 
-			<div class="listing-item">(<a href="/OrderAccess/Edit/@order.OrderID"  style="color: blue;">edit</a>)</div>
-            <div class="listing-item">(<a href="/OrderAccess/Delete/@order.OrderID"  style="color: blue;">delete</a>)</div>
+			<div class="listing-item name">Customer: @entry.theOrder.Name</div> 
+            <div class="listing-item">OrderID: @entry.theOrder.OrderID</div> 
+			<div class="listing-item">Email: @entry.theOrder.Email</div> 
+			<div class="listing-item">Phone#: @entry.theOrder.Phone</div>
+            <div class="listing-item">Status: @entry.theOrder.Status</div> 
+            <p>________________</p>
+            <div class="listing-item">Number of Quarters: @entry.theBeefOrder.NumQuarters</div>
+			<div class="listing-item">(<a href="/OrderAccess/Edit/@entry.theOrder.OrderID"  style="color: blue;">edit</a>)</div>
+            <div class="listing-item">(<a href="/OrderAccess/Delete/@entry.theOrder.OrderID"  style="color: blue;">delete</a>)</div>
 		</div>
+        <br />
+        <p>----------------------------------------------------</p>
 	}
 </div>

@@ -1,4 +1,4 @@
-﻿@model WallaceFarms.Order
+﻿@model WallaceFarms.Models.OrderModel
 @{
     ViewBag.Title = "Delete Order";
 }
@@ -12,34 +12,42 @@
         <legend>Order</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
+            @Html.LabelFor(model => model.theOrder.Name)
         </div>
         <div class="editor-field">
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.theOrder.Name)
         </div>
         <br />
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Phone)
+            @Html.LabelFor(model => model.theOrder.Phone)
         </div>
         <div class="editor-field">
-            @Html.DisplayFor(model => model.Phone)
+            @Html.DisplayFor(model => model.theOrder.Phone)
         </div>
         <br />
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Email)
+            @Html.LabelFor(model => model.theOrder.Email)
         </div>
         <div class="editor-field">
-            @Html.DisplayFor(model => model.Email)
+            @Html.DisplayFor(model => model.theOrder.Email)
         </div>
         <br />
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Status)
+            @Html.LabelFor(model => model.theOrder.Status)
         </div>
         <div class="editor-field">
-            @Html.DisplayFor(model => model.Status)
+            @Html.DisplayFor(model => model.theOrder.Status)
+        </div>
+        <br />
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.theBeefOrder.NumQuarters)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.theBeefOrder.NumQuarters)
         </div>
         <br />
 
