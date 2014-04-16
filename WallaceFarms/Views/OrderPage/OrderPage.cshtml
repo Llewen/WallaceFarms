@@ -1,4 +1,5 @@
-﻿@{
+﻿@model WallaceFarms.Models.OrderModel
+@{
     ViewBag.Title = "Order";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -20,18 +21,70 @@
 	            <div class="content" id="filled">
                     <article>
 	                    <h2>Place Your Order Here!</h2>
-                        <form>
-                            Name: <input type="text" class="textboxclass" name="name"><br /><br />
-				            Phone Number: <input type="tel" class="textboxclass2" name="phone"><br /><br />
-				            Email: <input type="email" class="textboxclass" name="email"><br /><br />  
-                            Choose an Amount: 
-                                <select class="dropdown2">
-								    <option value="whole">Whole</option>
-							        <option value="half">Half</option>
-							        <option value="quarter">Quarter (half of a half)</option>
-							    </select><br /><br />
-                            <input type="submit" value="Submit">
-                        </form>
+                        @using (Html.BeginForm())
+                            {
+                            <fieldset>
+                            <legend>Customer Orders</legend>
+
+                            <h2>Order</h2>
+                            <div class="editor-label">
+                                @Html.DisplayFor(model => model.theOrder.OrderID)
+                            </div>
+                                @Html.HiddenFor(model => model.theOrder.OrderID)
+
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.theOrder.Name)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.theOrder.Name)
+                            </div>
+                            <br />
+
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.theOrder.Phone)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.theOrder.Phone)
+                            </div>
+                            <br />
+
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.theOrder.Email)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.theOrder.Email)
+                            </div>
+                            <br />
+
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.theOrder.Status)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.theOrder.Status)
+                            </div>
+                            <br />
+                            <br />
+
+                            <!-- BEEF ORDER FEILD  -->
+                            <h2>Beef Order</h2>
+                             <div class="editor-label">
+                                @Html.DisplayFor(model => model.theBeefOrder.BeefOrderID)
+                            </div>
+                                @Html.HiddenFor(model => model.theBeefOrder.BeefOrderID)
+                                @Html.HiddenFor(model => model.theBeefOrder.OrderID)
+
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.theBeefOrder.NumQuarters)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(model => model.theBeefOrder.NumQuarters)
+                            </div>
+                            <br />
+
+                            <input type="submit" value="Submit Order" />
+
+                        </fieldset>
+                        }
                     </article>
 	       
                 </div>
