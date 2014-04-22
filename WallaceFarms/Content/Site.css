@@ -66,39 +66,58 @@ article {
     background-color: white;
 }
 
+
+/* Deals with tab postioning and content on the info page*/
 .tabs {
-  position: relative;   
-  height: 403px; 
-  width:900px;
-  clear: both;
-  margin: 0;
+    position: relative;   
+    height: 403px; 
+    width:900px;
+    clear: both;
+    margin: 0;
 }
+
 .tab {
-  float: right;
-  margin-right: 1px;
+    float: right;
+    margin-right: 1px;
+    width: 170px;
 }
 
 .tab label {
-  background: #eee; 
-  padding: 10px; 
-  border: 1px solid #ccc; 
-  margin-left: -1px; 
-  position: relative;
-  left: 1px; 
+    background: #eee; 
+    border: 1px solid #ccc; 
+    margin-left: -1px; 
+    position: relative;
+    left: 1px;
 }
+
+.tabButton {
+    font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: center;
+
+    display: inline-block;
+    color: black;
+    padding: 10px;
+    width: 150px;
+}
+
 .tab [type=radio] {
-  display: none;   
+    display: none;  
 }
+
 .tabcontent {
-  position: absolute;
-  top: 28px;
-  left: 0;
-  background: white;
-  right: 0;
-  bottom: 0;
-  padding: 20px;
-  border: 1px solid #ccc; 
-  overflow: scroll;
+    position: absolute;
+    top: 28px;
+    left: 0;
+    background: white;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    border: 1px solid #ccc; 
+    
+    /* Handy trick, thanks to Nick Craver on Stackoverflow.com*/
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 [type=radio]:checked ~ label {
   background: white;
@@ -107,4 +126,86 @@ article {
 }
 [type=radio]:checked ~ label ~ .tabcontent {
   z-index: 1;
+}
+
+
+/* Deals with the text and content of the questions on the Info page */
+.question {
+    padding: 10px 20px;
+    min-height: 75px;
+    border-top: 5px solid #eee;
+}
+
+.question h2 {
+    font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.question p {
+    font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+}
+
+
+/* Deals with the text and content of the farm blurb tab on the Info page */
+#farmBlurb {
+    padding: 10px 20px;
+    
+    border-top: 5px solid #eee;
+}
+
+#farmBlurb h2 {
+    font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#farmBlurb p {
+    font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+
+    text-indent: 30px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+
+/* CSS for the order form page */
+.content {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+fieldset {
+    border: 5px solid #eee;
+}
+
+fieldset legend {
+    font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.editor-label {
+    font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+editor-field {
+    font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
 }

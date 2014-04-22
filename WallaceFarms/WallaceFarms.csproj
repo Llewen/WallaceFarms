@@ -8,7 +8,7 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{DEAFB8DB-7156-4B2F-A67C-0A3F5220CD3C}</ProjectGuid>
-    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WallaceFarms</RootNamespace>
@@ -199,12 +199,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminModel.cs" />
-    <Compile Include="Models\Butcher.cs" />
     <Compile Include="Models\Filters\InitializeSimpleMembershipAttribute.cs" />
-    <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\OrderBeef.cs" />
     <Compile Include="Models\OrderModel.cs" />
-    <Compile Include="Models\Transaction.cs" />
     <Compile Include="order.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
