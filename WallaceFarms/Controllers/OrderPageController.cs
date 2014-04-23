@@ -56,7 +56,7 @@ namespace WallaceFarms.Controllers
             entities.SaveChanges();
 
             MailServer mailserver = new MailServer();
-            mailserver.SendOrderMail(Order.theOrder.Name, Order.theBeefOrder.NumQuarters);
+            mailserver.SendOrderMail(Order);
 
             return Redirect("/Index");
         }
@@ -101,9 +101,9 @@ namespace WallaceFarms.Controllers
             }
         }
 
-        public bool SendOrderMail(string name, int? amount)
+        public bool SendOrderMail(OrderModel order)
         {
-            string body = name + " just ordered " + amount + " quarters of beef!";
+            string body = order.theOrder.Name + " just ordered " + order.theBeefOrder.NumQuarters + " quarters of beef!";
 
             return SendMail("New Beef Order!", body);
         }
