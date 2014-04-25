@@ -1,5 +1,5 @@
 ﻿body {
-	background: #f5e6c6 ;
+	background: #F5E6C6;
 }
 
 .frame{
@@ -10,7 +10,7 @@
 	padding: 10px;
     width: 1046px;
 	height: 674px;
-	background: url("border-images/frame_border2.png") top center no-repeat;
+	background: url("../Images/frame_border2.png") top center no-repeat;
 }
 
 .wrapper{
@@ -22,11 +22,11 @@
 	margin-left: auto;
 	border-style:solid;
 	border-width: 3px;
-	background: url("border-images/farm3.jpg");
+	background: url("../Images/farm3.jpg");
 }
 
 #home{
-	background: url("border-images/farm2.jpg");
+	background: url("../Images/farm2.jpg");
 }
 .banner{
 	height: 100px;
@@ -62,8 +62,8 @@ article {
     padding-right: 20px;
 }
 
-#filled{
-    background-color: white;
+#filled {
+    background: #FFF;
 }
 
 
@@ -109,18 +109,18 @@ article {
     position: absolute;
     top: 28px;
     left: 0;
-    background: white;
+    background: #FFF;
     right: 0;
     bottom: 0;
     padding: 20px;
     border: 1px solid #ccc; 
     
-    /* Handy trick, thanks to Nick Craver on Stackoverflow.com*/
+    /* Handy trick, thanks to Nick Craver on Stackoverflow.com */
     overflow-y: scroll;
     overflow-x: hidden;
 }
 [type=radio]:checked ~ label {
-  background: white;
+  background: #FFF;
   border-bottom: 1px solid white;
   z-index: 2;
 }
@@ -208,4 +208,23 @@ editor-field {
     font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
     font-size: 14px;
     color: black;
+}
+
+.InfoFields {
+    float: left;
+}
+
+#commentBox {
+    float: right;
+    margin-right: 15px;
+}
+
+    #commentBox textarea {
+        width: 600px;
+        height: 275px;
+        resize: none;
+    }
+
+.Submit {
+    clear: both;
 }

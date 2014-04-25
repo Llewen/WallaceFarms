@@ -35,6 +35,7 @@
           <Property Name="OrderID" Type="int" />
           <Property Name="ButcherID" Type="int" />
           <Property Name="NumQuarters" Type="int" />
+          <Property Name="Comments" Type="varchar" MaxLength="160" />
         </EntityType>
         <EntityType Name="Butcher">
           <Key>
@@ -113,6 +114,7 @@
           <Property Name="OrderID" Type="Int32" />
           <Property Name="ButcherID" Type="Int32" />
           <Property Name="NumQuarters" Type="Int32" />
+          <Property Name="Comments" Type="String" MaxLength="160" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Butcher" Relationship="OrderBeefModel.fk_butcherID" FromRole="BeefOrder" ToRole="Butcher" />
           <NavigationProperty Name="Order" Relationship="OrderBeefModel.fk_orderID" FromRole="BeefOrder" ToRole="Order" />
         </EntityType>
@@ -182,6 +184,7 @@
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="ButcherID" ColumnName="ButcherID" />
                 <ScalarProperty Name="NumQuarters" ColumnName="NumQuarters" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
