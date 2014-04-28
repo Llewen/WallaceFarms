@@ -128,7 +128,11 @@ namespace WallaceFarms.Controllers
 
         public bool SendOrderMail(OrderModel order)
         {
-            string body = order.theOrder.Name + " just ordered " + order.theBeefOrder.NumQuarters + " quarters of beef!";
+            string name = order.theOrder.Name;
+            int? amount = order.theBeefOrder.NumQuarters;
+
+            string body = name + " just ordered " + amount + (amount == 1 ? " quarter" : " quarters") + " of beef!";
+
             return SendMail("New Beef Order!", body);
         }
     }
