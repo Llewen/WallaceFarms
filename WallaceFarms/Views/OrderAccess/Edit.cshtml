@@ -62,7 +62,16 @@
             @Html.LabelFor(model => model.theBeefOrder.NumQuarters)
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.theBeefOrder.NumQuarters)
+            @Html.DropDownListFor(model => model.theBeefOrder.NumQuarters, WallaceFarms.Models.OrderModel.quarterOptions)
+        </div>
+        <br />
+
+         <div class="editor-label">
+            @Html.DisplayFor(model => model.theBeefOrder.Comments) 
+            <p>160 char. MAX</p>
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.theBeefOrder.Comments)
         </div>
         <br />
 

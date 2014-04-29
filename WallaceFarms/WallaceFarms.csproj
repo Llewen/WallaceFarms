@@ -85,6 +85,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.20\lib\net45\System.Net.Http.Extensions.dll</HintPath>
@@ -201,6 +202,7 @@
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="Models\QuarterOptions.cs" />
     <Compile Include="order.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -295,6 +297,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>order.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\farm2.jpg" />
+    <Content Include="Images\farm3.jpg" />
+    <Content Include="Images\frame_border2.png" />
     <Content Include="order.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>order.edmx</DependentUpon>

@@ -18,6 +18,7 @@ namespace WallaceFarms
         public Nullable<int> OrderID { get; set; }
         public Nullable<int> ButcherID { get; set; }
         public Nullable<int> NumQuarters { get; set; }
+        public string Comments { get; set; }
     
         public virtual Butcher Butcher { get; set; }
         public virtual Order Order { get; set; }
