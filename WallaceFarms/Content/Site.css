@@ -30,7 +30,7 @@
 }
 .banner{
 	height: 100px;
-	}
+}
 .content{
     background-color: transparent;
 	height: 403px;
@@ -62,8 +62,12 @@ article {
     padding-right: 20px;
 }
 
-#filled {
+#filledWhite {
     background: #FFF;
+}
+
+#filledGray {
+    background: #eee;
 }
 
 
@@ -83,26 +87,29 @@ article {
 }
 
 .tab label {
+    height: 27px;
     background: #eee; 
     border: 1px solid #ccc; 
     margin-left: -1px; 
     position: relative;
     left: 1px;
+    display: inline-block;
 }
 
 .tabButton {
     font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
     font-size: 14px;
     text-align: center;
-
-    display: inline-block;
+    display: inherit;
     color: black;
     padding: 10px;
+    padding-top: 5px;
     width: 150px;
 }
 
 .tab [type=radio] {
     display: none;  
+
 }
 
 .tabcontent {
