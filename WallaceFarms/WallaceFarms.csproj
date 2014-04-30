@@ -308,6 +308,7 @@
     <Content Include="order.edmx.diagram">
       <DependentUpon>order.edmx</DependentUpon>
     </Content>
+    <Content Include="order.edmx.sql" />
     <Content Include="order.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>order.edmx</DependentUpon>

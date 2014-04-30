@@ -4,83 +4,82 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OrderBeefModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="OrderBeefModelStoreContainer">
-          <EntitySet Name="__MigrationHistory" EntityType="OrderBeefModel.Store.__MigrationHistory" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BeefOrder" EntityType="OrderBeefModel.Store.BeefOrder" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Butcher" EntityType="OrderBeefModel.Store.Butcher" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Order" EntityType="OrderBeefModel.Store.Order" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="fk_butcherID" Association="OrderBeefModel.Store.fk_butcherID">
-            <End Role="Butcher" EntitySet="Butcher" />
-            <End Role="BeefOrder" EntitySet="BeefOrder" />
-          </AssociationSet>
-          <AssociationSet Name="fk_orderID" Association="OrderBeefModel.Store.fk_orderID">
-            <End Role="Order" EntitySet="Order" />
-            <End Role="BeefOrder" EntitySet="BeefOrder" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="__MigrationHistory">
-          <Key>
-            <PropertyRef Name="MigrationId" />
-          </Key>
-          <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="255" />
-          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
-          <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
-        </EntityType>
-        <EntityType Name="BeefOrder">
-          <Key>
-            <PropertyRef Name="BeefOrderID" />
-          </Key>
-          <Property Name="BeefOrderID" Type="int" Nullable="false" />
-          <Property Name="OrderID" Type="int" />
-          <Property Name="ButcherID" Type="int" />
-          <Property Name="NumQuarters" Type="int" />
-          <Property Name="Comments" Type="varchar" MaxLength="160" />
-        </EntityType>
-        <EntityType Name="Butcher">
-          <Key>
-            <PropertyRef Name="ButcherID" />
-          </Key>
-          <Property Name="ButcherID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="80" />
-          <Property Name="Phone" Type="varchar" MaxLength="10" />
-        </EntityType>
-        <EntityType Name="Order">
-          <Key>
-            <PropertyRef Name="OrderID" />
-          </Key>
-          <Property Name="OrderID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="80" />
-          <Property Name="Phone" Type="varchar" MaxLength="10" />
-          <Property Name="Email" Type="varchar" MaxLength="80" />
-          <Property Name="Status" Type="int" />
-        </EntityType>
-        <Association Name="fk_butcherID">
-          <End Role="Butcher" Type="OrderBeefModel.Store.Butcher" Multiplicity="0..1" />
-          <End Role="BeefOrder" Type="OrderBeefModel.Store.BeefOrder" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Butcher">
-              <PropertyRef Name="ButcherID" />
-            </Principal>
-            <Dependent Role="BeefOrder">
-              <PropertyRef Name="ButcherID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_orderID">
-          <End Role="Order" Type="OrderBeefModel.Store.Order" Multiplicity="0..1" />
-          <End Role="BeefOrder" Type="OrderBeefModel.Store.BeefOrder" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Order">
-              <PropertyRef Name="OrderID" />
-            </Principal>
-            <Dependent Role="BeefOrder">
-              <PropertyRef Name="OrderID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="OrderBeefModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="OrderBeefModelStoreContainer">
+    <EntitySet Name="C__MigrationHistory" EntityType="OrderBeefModel.Store.C__MigrationHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BeefOrders" EntityType="OrderBeefModel.Store.BeefOrders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Butchers" EntityType="OrderBeefModel.Store.Butchers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Orders" EntityType="OrderBeefModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="fk_butcherID" Association="OrderBeefModel.Store.fk_butcherID">
+      <End Role="Butcher" EntitySet="Butchers" />
+      <End Role="BeefOrder" EntitySet="BeefOrders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_orderID" Association="OrderBeefModel.Store.fk_orderID">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="BeefOrder" EntitySet="BeefOrders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="BeefOrders">
+    <Key>
+      <PropertyRef Name="BeefOrderID" />
+    </Key>
+    <Property Name="BeefOrderID" Type="int" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="true" />
+    <Property Name="ButcherID" Type="int" Nullable="true" />
+    <Property Name="NumQuarters" Type="int" Nullable="true" />
+    <Property Name="Comments" Type="varchar" Nullable="true" MaxLength="160" />
+  </EntityType>
+  <EntityType Name="Butchers">
+    <Key>
+      <PropertyRef Name="ButcherID" />
+    </Key>
+    <Property Name="ButcherID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="true" MaxLength="80" />
+    <Property Name="Phone" Type="varchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="true" MaxLength="80" />
+    <Property Name="Phone" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Email" Type="varchar" Nullable="true" MaxLength="80" />
+    <Property Name="Status" Type="int" Nullable="true" />
+  </EntityType>
+  <Association Name="fk_butcherID">
+    <End Role="Butcher" Type="OrderBeefModel.Store.Butchers" Multiplicity="0..1" />
+    <End Role="BeefOrder" Type="OrderBeefModel.Store.BeefOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Butcher">
+        <PropertyRef Name="ButcherID" />
+      </Principal>
+      <Dependent Role="BeefOrder">
+        <PropertyRef Name="ButcherID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_orderID">
+    <End Role="Order" Type="OrderBeefModel.Store.Orders" Multiplicity="0..1" />
+    <End Role="BeefOrder" Type="OrderBeefModel.Store.BeefOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="BeefOrder">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OrderBeefModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -166,51 +165,50 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="OrderBeefModelStoreContainer" CdmEntityContainer="OrderBeefEntities">
-          <EntitySetMapping Name="C__MigrationHistory">
-            <EntityTypeMapping TypeName="OrderBeefModel.C__MigrationHistory">
-              <MappingFragment StoreEntitySet="__MigrationHistory">
-                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
-                <ScalarProperty Name="Model" ColumnName="Model" />
-                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BeefOrders">
-            <EntityTypeMapping TypeName="OrderBeefModel.BeefOrder">
-              <MappingFragment StoreEntitySet="BeefOrder">
-                <ScalarProperty Name="BeefOrderID" ColumnName="BeefOrderID" />
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="ButcherID" ColumnName="ButcherID" />
-                <ScalarProperty Name="NumQuarters" ColumnName="NumQuarters" />
-                <ScalarProperty Name="Comments" ColumnName="Comments" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Butchers">
-            <EntityTypeMapping TypeName="OrderBeefModel.Butcher">
-              <MappingFragment StoreEntitySet="Butcher">
-                <ScalarProperty Name="ButcherID" ColumnName="ButcherID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="OrderBeefModel.Order">
-              <MappingFragment StoreEntitySet="Order">
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OrderBeefModelStoreContainer" CdmEntityContainer="OrderBeefEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="IsTypeOf(OrderBeefModel.C__MigrationHistory)">
+        <MappingFragment StoreEntitySet="C__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeefOrders">
+      <EntityTypeMapping TypeName="IsTypeOf(OrderBeefModel.BeefOrder)">
+        <MappingFragment StoreEntitySet="BeefOrders">
+          <ScalarProperty Name="BeefOrderID" ColumnName="BeefOrderID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ButcherID" ColumnName="ButcherID" />
+          <ScalarProperty Name="NumQuarters" ColumnName="NumQuarters" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Butchers">
+      <EntityTypeMapping TypeName="IsTypeOf(OrderBeefModel.Butcher)">
+        <MappingFragment StoreEntitySet="Butchers">
+          <ScalarProperty Name="ButcherID" ColumnName="ButcherID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="IsTypeOf(OrderBeefModel.Order)">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
