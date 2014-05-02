@@ -13,10 +13,10 @@ namespace WallaceFarms
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OrderBeefEntities : DbContext
+    public partial class OrderEntities : DbContext
     {
-        public OrderBeefEntities()
-            : base("name=OrderBeefEntities")
+        public OrderEntities()
+            : base("name=OrderEntities")
         {
         }
     
