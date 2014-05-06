@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Order";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Scripts.Render("~/bundles/jquery");
+    Scripts.Render("~/bundles/jqueryval");    
 }
 
 <!DOCTYPE html>
@@ -33,7 +35,8 @@
                                 @Html.LabelFor(model => model.theOrder.Name)
                             </div>
                             <div class="editor-field">
-                                @Html.TextBoxFor(model => model.theOrder.Name)
+                                @Html.TextBoxFor(model => model.theOrder.Name)<br />
+                                @Html.ValidationMessageFor(model => model.theOrder.Name)
                             </div>
                             <br />
 
@@ -41,7 +44,8 @@
                                 @Html.LabelFor(model => model.theOrder.Phone)
                             </div>
                             <div class="editor-field">
-                                @Html.TextBoxFor(model => model.theOrder.Phone)
+                                @Html.TextBoxFor(model => model.theOrder.Phone)<br />
+                                @Html.ValidationMessageFor(model => model.theOrder.Phone)
                             </div>
                             <br />
 
@@ -49,7 +53,8 @@
                                 @Html.LabelFor(model => model.theOrder.Email)
                             </div>
                             <div class="editor-field">
-                                @Html.TextBoxFor(model => model.theOrder.Email)
+                                @Html.TextBoxFor(model => model.theOrder.Email)<br />
+                                @Html.ValidationMessageFor(model => model.theOrder.Email)
                             </div>
                             <br />
 
@@ -101,3 +106,4 @@
          </div>
 	</body>
 </html>
+

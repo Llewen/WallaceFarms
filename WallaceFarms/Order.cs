@@ -6,6 +6,7 @@
 //    Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System.ComponentModel.DataAnnotations;
 
 namespace WallaceFarms
 {
@@ -20,8 +21,19 @@ namespace WallaceFarms
         }
     
         public int OrderID { get; set; }
+
+        [Required(ErrorMessage="Please enter a name.")]
+        [RegularExpression(@"\D+ \D+", ErrorMessage = "Please enter a last name.")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage="Please enter a phone number.")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"\d{10}", ErrorMessage="Please enter a 10-digit phone number.")]
         public string Phone { get; set; }
+
+        [Required(ErrorMessage="Please enter an email.")]
+        [DataType(DataType.EmailAddress)]
+        [RegularExpression(@"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}$", ErrorMessage="Please enter a valid email address.")]
         public string Email { get; set; }
         public Nullable<int> Status { get; set; }
     
