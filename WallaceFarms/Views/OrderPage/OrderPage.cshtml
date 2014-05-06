@@ -9,8 +9,8 @@
 	<head>
         <title>@ViewBag.Title</title>
         <meta charset="utf-8" />
-        <meta name="keywords" content="farm, wallace, newcastle, beef, pennslyvania, angus, herford, fresh, order">
-        <meta name="description" content="Welcome to Wallace Farm, Newcastle PA - Quality fresh Beef available for order.">
+        <meta name="keywords" content="farm, wallace, newcastle, beef, pennsylvania, angus, hereford, fresh, order">
+        <meta name="description" content="Welcome to Wallace Farm, New Castle, PA - Quality fresh beef available for order.">
 	</head>
 
 	<body>
@@ -58,7 +58,7 @@
                             @Html.HiddenFor(model => model.theBeefOrder.OrderID)
 
                             <div class="editor-label">
-                                <p>Number of Quarters</p>
+                                <p>Amount of Beef</p>
                             </div>
                             <div class="editor-field">
                                 @Html.DropDownListFor(model => model.theBeefOrder.NumQuarters, WallaceFarms.Models.OrderModel.quarterOptions)
