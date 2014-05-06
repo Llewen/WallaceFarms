@@ -81,9 +81,9 @@ namespace WallaceFarms.Controllers
                 inDatabase = false;
             }
 
-<<<<<<< HEAD
             if (inDatabase)
             {
+                // Send a notification email to Professor Wallace and redirect to thank you page.
                 MailServer mailserver = new MailServer();
                 mailserver.SendOrderMail(Order);
                 return Redirect("/Thanks");
@@ -92,13 +92,6 @@ namespace WallaceFarms.Controllers
             {
                 return Redirect("/Error");
             }
-=======
-            // Send a notification email to Professor Wallace.
-            MailServer mailserver = new MailServer();
-            mailserver.SendOrderMail(Order);
-
-            return Redirect("/Index");
->>>>>>> 760f0e4d92127de34a3792dfee55bece2ef12ea2
         }
 
     }
@@ -148,6 +141,12 @@ namespace WallaceFarms.Controllers
             Message.From = new MailAddress(MailServerUsername + "@gmail.com");
         }
 
+        /// <summary>
+        /// General method to send an email with a specified subject and body.
+        /// </summary>
+        /// <param name="subject">Subject of the email.</param>
+        /// <param name="body">Body of the email.</param>
+        /// <returns>Returns whether the email was successfully sent.</returns>
         public bool SendMail(string subject, string body)
         {
             try
@@ -165,6 +164,11 @@ namespace WallaceFarms.Controllers
             }
         }
 
+        /// <summary>
+        /// Method to send a notification email based on a particular order.
+        /// </summary>
+        /// <param name="order">The order that the notification is about.</param>
+        /// <returns>Returns (from the SendMail method) whether the email was successfully sent.</returns>
         public bool SendOrderMail(OrderModel order)
         {
             string name = order.theOrder.Name;
