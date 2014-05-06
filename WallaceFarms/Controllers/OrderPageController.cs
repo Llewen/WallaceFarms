@@ -103,7 +103,7 @@ namespace WallaceFarms.Controllers
         /// </summary>
         // If you wish to add more recipients, just create more string variables like To
         // and put another line like Message.To.Add(RECIPIENT_STRING_VARIABLE); in the constructor.
-        private const string To = "smcaldwe@geneva.edu";
+        private const string OrderNotificationRecipient = "smcaldwe@geneva.edu";
 
         /// <summary>
         /// Gmail username for the email sender. After all, these emails need to come from somewhere.
@@ -137,20 +137,21 @@ namespace WallaceFarms.Controllers
             Smtp.Credentials = new System.Net.NetworkCredential(MailServerUsername, MailServerPassword);
 
             Message = new MailMessage();
-            Message.To.Add(To);
             Message.From = new MailAddress(MailServerUsername + "@gmail.com");
         }
 
         /// <summary>
         /// General method to send an email with a specified subject and body.
         /// </summary>
+        /// <param name="to">Recipient of the email.</param>
         /// <param name="subject">Subject of the email.</param>
         /// <param name="body">Body of the email.</param>
         /// <returns>Returns whether the email was successfully sent.</returns>
-        public bool SendMail(string subject, string body)
+        public bool SendMail(string to, string subject, string body)
         {
             try
             {
+                Message.To.Add(to);
                 Message.Subject = subject;
                 Message.Body = body;
 
@@ -176,7 +177,7 @@ namespace WallaceFarms.Controllers
 
             string body = name + " just ordered " + amount + (amount == 1 ? " quarter" : " quarters") + " of beef!";
 
-            return SendMail("New Beef Order!", body);
+            return SendMail(OrderNotificationRecipient, "New Beef Order!", body);
         }
     }
 }

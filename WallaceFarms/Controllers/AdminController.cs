@@ -38,6 +38,11 @@ namespace WallaceFarms.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
+                if (returnUrl == null)
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+
                 return RedirectToLocal(returnUrl);
             }
 
