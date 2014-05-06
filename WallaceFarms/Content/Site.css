@@ -235,3 +235,24 @@ editor-field {
 .Submit {
     clear: both;
 }
+
+
+
+/* CSS for the thanks and error pages */
+article {
+    padding: 10px 20px;
+}
+
+.feedback h2 {
+    border-top: 5px solid #eee;
+    font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 18px;
+    padding-top: 10px;
+    color: black;
+}
+
+.feedback p {
+    font-family: "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+}

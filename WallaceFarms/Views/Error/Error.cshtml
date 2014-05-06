@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Oops!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>@ViewBag.Title</title>
+        <meta charset="utf-8" />
+        <meta name="keywords" content="farm, wallace, newcastle, beef, pennslyvania, angus, herford, fresh, order">
+        <meta name="description" content="Welcome to Wallace Farm, Newcastle PA - Quality fresh Beef available for order.">
+	</head>
+
+	<body>
+
+		<div class="frame">	
+            <div class="wrapper">
+	            	<div class="banner">
+                        <img src="../Images/banner.png" width="900" height="100" />
+	                </div>
+	            <div class="content" id="filledWhite">
+                    <article class="feedback">
+                        <h2>OH NO!</h2>
+
+                        <p>There was an error with processing your order.  Please try again!</p>
+                    </article>
+	       
+                </div>
+
+	            <div class="menu"><ul>
+		                <li><a href="Info">About Us</a></li>
+		
+		                <li id="right_menu"><a href="OrderPage">Order Beef</a></li>
+	                </ul>
+
+	                <div id="footer">
+			                <span class="copyright"> &copy; @DateTime.Today.Year Wallace Farm</span>
+	                </div>
+	            </div>
+
+	        </div>
+
+         </div>
+	</body>
+</html>

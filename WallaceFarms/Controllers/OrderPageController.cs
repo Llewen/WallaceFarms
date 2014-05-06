@@ -51,11 +51,15 @@ namespace WallaceFarms.Controllers
         [HttpPost]
         public ActionResult Index(OrderModel Order)
         {
+            bool inDatabase;
+
             entities.Orders.Add(Order.theOrder);
             entities.BeefOrders.Add(Order.theBeefOrder);
+
             try
             {
                 entities.SaveChanges();
+                inDatabase = true;
             }
             // Handy code by Troy Alford and Richard of Stackoverflow.com
             // Detects the specific database error and provides a brief description
@@ -72,18 +76,21 @@ namespace WallaceFarms.Controllers
                         sb.AppendLine();
                     }
                 }
+                string errorMessage = "Entity Validation Failed - errors follow:\n" + sb.ToString();
 
-                throw new DbEntityValidationException(
-                    "Entity Validation Failed - errors follow:\n" +
-                    sb.ToString(), ex
-                ); // Add the original exception as the innerException
+                inDatabase = false;
             }
 
-
-            MailServer mailserver = new MailServer();
-            mailserver.SendOrderMail(Order);
-
-            return Redirect("/Index");
+            if (inDatabase)
+            {
+                MailServer mailserver = new MailServer();
+                mailserver.SendOrderMail(Order);
+                return Redirect("/Thanks");
+            }
+            else
+            {
+                return Redirect("/Error");
+            }
         }
 
     }
