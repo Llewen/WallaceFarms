@@ -297,6 +297,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>order.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\banner.png" />
     <Content Include="Images\farm2.jpg" />
     <Content Include="Images\farm3.jpg" />
     <Content Include="Images\frame_border2.png" />
