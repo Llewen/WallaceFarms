@@ -79,7 +79,7 @@ namespace WallaceFarms.Controllers
                 ); // Add the original exception as the innerException
             }
 
-
+            // Send a notification email to Professor Wallace.
             MailServer mailserver = new MailServer();
             mailserver.SendOrderMail(Order);
 
@@ -90,10 +90,34 @@ namespace WallaceFarms.Controllers
 
     public class MailServer
     {
+        /// <summary>
+        /// Recipient of order notifications. (Professor Wallace)
+        /// </summary>
+        // If you wish to add more recipients, just create more string variables like To
+        // and put another line like Message.To.Add(RECIPIENT_STRING_VARIABLE); in the constructor.
         private const string To = "smcaldwe@geneva.edu";
+
+        /// <summary>
+        /// Gmail username for the email sender. After all, these emails need to come from somewhere.
+        /// This can be changed to any Gmail username.
+        /// </summary>
         private const string MailServerUsername = "wallace.farm.mailserver";
+
+        /// <summary>
+        /// Gmail password for the email sender. After all, these emails need to come from somewhere.
+        /// This can be changed to match any Gmail account.
+        /// </summary>
         private const string MailServerPassword = "!WallaceCSC309";
+
+        /// <summary>
+        /// SMTP (Simple Mail Transfer Protocol) client.
+        /// This is Gmail by default, but it can be changed to any SMTP service.
+        /// </summary>
         private SmtpClient Smtp { get; set; }
+
+        /// <summary>
+        /// Contents of the email.
+        /// </summary>
         private MailMessage Message { get; set; }
 
         public MailServer()

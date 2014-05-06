@@ -88,10 +88,12 @@ namespace WallaceFarms.Models
         public string ConfirmPassword { get; set; }
     }
 
+    #region Unused. Deleting may break things.
     public class ExternalLogin
     {
         public string Provider { get; set; }
         public string ProviderDisplayName { get; set; }
         public string ProviderUserId { get; set; }
     }
+    #endregion
 }
