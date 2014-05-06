@@ -103,7 +103,7 @@ namespace WallaceFarms.Controllers
         /// </summary>
         // If you wish to add more recipients, just create more string variables like To
         // and put another line like Message.To.Add(RECIPIENT_STRING_VARIABLE); in the constructor.
-        private const string OrderNotificationRecipient = "smcaldwe@geneva.edu";
+        private const string OrderNotificationRecipient = "llwallac@geneva.edu";
 
         /// <summary>
         /// Gmail username for the email sender. After all, these emails need to come from somewhere.
