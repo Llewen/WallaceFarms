@@ -51,47 +51,52 @@ namespace WallaceFarms.Controllers
         [HttpPost]
         public ActionResult Index(OrderModel Order)
         {
-            bool inDatabase;
+            if (ModelState.IsValid)
+            { 
+                bool inDatabase;
 
-            entities.Orders.Add(Order.theOrder);
-            entities.BeefOrders.Add(Order.theBeefOrder);
+                entities.Orders.Add(Order.theOrder);
+                entities.BeefOrders.Add(Order.theBeefOrder);
 
-            try
-            {
-                entities.SaveChanges();
-                inDatabase = true;
-            }
-            // Handy code by Troy Alford and Richard of Stackoverflow.com
-            // Detects the specific database error and provides a brief description
-            catch (DbEntityValidationException ex)
-            {
-                StringBuilder sb = new StringBuilder();
-
-                foreach (var failure in ex.EntityValidationErrors)
+                try
                 {
-                    sb.AppendFormat("{0} failed validation\n", failure.Entry.Entity.GetType());
-                    foreach (var error in failure.ValidationErrors)
-                    {
-                        sb.AppendFormat("- {0} : {1}", error.PropertyName, error.ErrorMessage);
-                        sb.AppendLine();
-                    }
+                    entities.SaveChanges();
+                    inDatabase = true;
                 }
-                string errorMessage = "Entity Validation Failed - errors follow:\n" + sb.ToString();
+                // Handy code by Troy Alford and Richard of Stackoverflow.com
+                // Detects the specific database error and provides a brief description
+                catch (DbEntityValidationException ex)
+                {
+                    StringBuilder sb = new StringBuilder();
 
-                inDatabase = false;
+                    foreach (var failure in ex.EntityValidationErrors)
+                    {
+                        sb.AppendFormat("{0} failed validation\n", failure.Entry.Entity.GetType());
+                        foreach (var error in failure.ValidationErrors)
+                        {
+                            sb.AppendFormat("- {0} : {1}", error.PropertyName, error.ErrorMessage);
+                            sb.AppendLine();
+                        }
+                    }
+                    string errorMessage = "Entity Validation Failed - errors follow:\n" + sb.ToString();
+
+                    inDatabase = false;
+                }
+
+                if (inDatabase)
+                {
+                    // Send a notification email to Professor Wallace and redirect to thank you page.
+                    MailServer mailserver = new MailServer();
+                    mailserver.SendOrderMail(Order);
+                    return Redirect("/Thanks");
+                }
+                else
+                {
+                    return Redirect("/Error");
+                }
             }
 
-            if (inDatabase)
-            {
-                // Send a notification email to Professor Wallace and redirect to thank you page.
-                MailServer mailserver = new MailServer();
-                mailserver.SendOrderMail(Order);
-                return Redirect("/Thanks");
-            }
-            else
-            {
-                return Redirect("/Error");
-            }
+            return View("OrderPage", Order);
         }
 
     }
